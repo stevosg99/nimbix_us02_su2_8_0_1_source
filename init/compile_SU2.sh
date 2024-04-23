@@ -36,7 +36,7 @@ while [ "$build_counter" -le 3 ]; do
 	# Set environmental variables from meson build
 	export SU2_DATA=/data/SU2
 	export SU2_HOME=/tmp/SU2/SU2
-	export SU2_RUN=/tmp/SU2/install/bin
+	export SU2_RUN=/tmp/SU2/SU2/bin
 	export PATH=$PATH:$SU2_RUN
 	export PYTHONPATH=$PYTHONPATH:$SU2_RUN
 	# Set environmental variable to allow multi-node use
