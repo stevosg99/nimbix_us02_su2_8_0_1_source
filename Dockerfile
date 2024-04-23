@@ -35,23 +35,23 @@ EXPOSE 22
 WORKDIR /data/
 
 # Create a directory to compile SU2
-RUN mkdir -p /data/SU2/init
+#RUN mkdir -p /data/SU2/init
 
 # Ensure full access
-RUN chmod 0777 /data/SU2
+#RUN chmod 0777 /data/SU2
 
 # Add all source files to the newly created directory
-ADD ./init/init.sh /data/SU2/init/init.sh
-ADD ./init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
+ADD init/init.sh /data/SU2/init/init.sh
+ADD init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
 
 # Ensure full access
-RUN chmod 0777 /data/SU2/init/init.sh
-RUN chmod 0777 /data/SU2/init/compile_SU2.sh
+#RUN chmod 0777 /data/SU2/init/init.sh
+#RUN chmod 0777 /data/SU2/init/compile_SU2.sh
 
 # Save Nimbix AppDef
-COPY ./NAE/AppDef.json /etc/NAE/AppDef.json
-COPY ./NAE/SU2logo.png /etc/NAE/SU2logo.png
-COPY ./NAE/screenshot.png /etc/NAE/screenshot.png
+COPY NAE/AppDef.json /etc/NAE/AppDef.json
+COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
+COPY NAE/screenshot.png /etc/NAE/screenshot.png
 
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
 CMD ["/data/SU2/init/init.sh"]
