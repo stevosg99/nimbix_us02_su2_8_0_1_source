@@ -38,7 +38,7 @@ WORKDIR /tmp/
 RUN mkdir -p /tmp/SU2
 
 # Add all source files to the newly created directory
-ADD ./ /tmp/SU2
+COPY ./ /tmp/SU2
 
 # Ensure full access
 RUN chmod -R 0777 /tmp/SU2
