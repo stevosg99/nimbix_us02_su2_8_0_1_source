@@ -36,9 +36,11 @@ WORKDIR /tmp/
 
 # Create a directory to compile SU2
 RUN mkdir -p /tmp/SU2
+RUN mkdir -p /tmp/SU2/init
 
 # Add all source files to the newly created directory
-COPY ./ /tmp/SU2
+COPY ./init/init.sh /tmp/SU2/init/init.sh
+COPY ./init/compile_su2.sh /tmp/SU2/init/compile_su2.sh
 
 # Ensure full access
 RUN chmod -R 0777 /tmp/SU2
