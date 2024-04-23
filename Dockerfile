@@ -38,11 +38,15 @@ WORKDIR /tmp/
 RUN mkdir -p /tmp/SU2/init
 
 # Ensure full access
-RUN chmod -R 0777 /tmp/SU2
+RUN chmod 0777 /tmp/SU2
 
 # Add all source files to the newly created directory
 ADD ./init/init.sh /tmp/SU2/init/init.sh
 ADD ./init/compile_SU2.sh /tmp/SU2/init/compile_SU2.sh
+
+# Ensure full access
+RUN chmod 0777 /tmp/SU2/init/init.sh
+RUN chmod 0777 /tmp/SU2/init/compile_SU2.sh
 
 # Save Nimbix AppDef
 COPY ./NAE/AppDef.json /etc/NAE/AppDef.json
