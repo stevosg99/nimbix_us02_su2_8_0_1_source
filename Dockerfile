@@ -41,8 +41,8 @@ WORKDIR /data/
 #RUN chmod 0777 /data/SU2
 
 # Add all source files to the newly created directory
-ADD init/init.sh /data/SU2/init/init.sh
-ADD init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
+COPY init/init.sh /data/SU2/init/init.sh
+COPY init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
 
 # Ensure full access
 #RUN chmod 0777 /data/SU2/init/init.sh
