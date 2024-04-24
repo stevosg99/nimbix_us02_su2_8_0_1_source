@@ -22,10 +22,10 @@
             "path": "/tmp/SU2/init/init.sh",
             "interactive": true,
             "name": "SU2 Batch",
-            "description": "Run a batch command using /bin/bash.  Path must be specified within /tmp/SU2.",
+            "description": "Run a batch command using /bin/bash.  Path must be specified within /data.",
             "parameters": {
                 "-file": {
-                    "name": "Bash file from /tmp/SU2",
+                    "name": "Bash file from /data",
                     "type": "FILE",
 					"required": true
                 }
