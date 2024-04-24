@@ -20,7 +20,6 @@
     ],
     "commands": {
         "Batch": {
-            "path": "/usr",
             "interactive": true,
             "name": "SU2 Batch",
             "description": "Run a batch command using /bin/bash.  Path must be specified within /data.",
