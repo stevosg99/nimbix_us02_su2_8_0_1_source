@@ -8,10 +8,10 @@ echo "Compiling SU2"
 
 echo "Changing to /data/SU2 directory to begin data processing."
 
-cd /data/SU2
+cd /tmp/SU2
 
 # Provide permission to run bash file in /data directory
-chmod -R 0777 /data/SU2
+chmod -R 0777 /tmp/SU2
 
 # Get bash filename from session initialization
 while [[ -n "$1" ]]; do
