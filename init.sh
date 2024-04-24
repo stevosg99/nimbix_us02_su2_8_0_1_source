@@ -4,14 +4,14 @@ sleep 10
 
 # Compile SU2 on the main node in the session
 echo "Compiling SU2"
-bash /tmp/SU2/compile_SU2.sh
+bash $HOME/SU2/compile_SU2.sh
 
 echo "Changing to /data directory to begin data processing."
 
 cd /data
 
 # Provide permission to run bash file in /data directory
-chmod -R 0777 /data
+chmod -R a+rwx /data
 
 # Get bash filename from session initialization
 while [[ -n "$1" ]]; do
