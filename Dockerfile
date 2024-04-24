@@ -38,7 +38,8 @@ WORKDIR $HOME/
 RUN mkdir -p $HOME/SU2/
 
 # Add all source files to the newly created directory
-ADD --chown=root:root ./ $HOME/SU2/
+ADD init.sh $HOME/SU2/
+ADD compile_SU2.sh $HOME/SU2/
 
 # Ensure full access
 RUN chmod -R a=rwx $HOME/SU2/
