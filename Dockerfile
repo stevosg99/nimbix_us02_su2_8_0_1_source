@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 ENV LANG C.UTF-8
 LABEL maintainer="Stephen Graham" \
       license="GNU LGPL 2.1"
@@ -24,15 +24,13 @@ RUN apt remove -y mpich
 # Copy from nimbix/image-common
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install curl && \
-    curl -H 'Cache-Control: no-cache' \
-        https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
-        | bash
+    curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh | bash
 
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
 
 # Change working directory
-#WORKDIR /data/
+WORKDIR /data/
 
 # Create a directory to compile SU2
 #RUN mkdir -p /data/SU2/init
@@ -54,4 +52,4 @@ COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
-RUN bash /data/SU2/init/init.sh
+#CMD "/data/SU2/init/init.sh"
