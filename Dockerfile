@@ -46,7 +46,5 @@ COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 
-RUN chmod 777 /tmp/SU2/init/init.sh
-
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
 CMD "/tmp/SU2/init/init.sh"
