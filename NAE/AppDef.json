@@ -3,7 +3,7 @@
     "description": "Multiphysics Simulation and Design Software",
     "author": "SU2 Foundation",
     "licensed": true,
-    "appdefversion": 1,
+    "appdefversion": 2,
     "classifications": [
         "Simulation",
         "Simulation/Computational Fluid Dynamics",
