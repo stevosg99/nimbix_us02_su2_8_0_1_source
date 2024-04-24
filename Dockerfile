@@ -47,4 +47,4 @@ COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
-CMD "/tmp/SU2/init/init.sh"
+CMD "/tmp/SU2/init.sh"
