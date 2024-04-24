@@ -23,9 +23,11 @@ RUN apt remove -y mpich
 
 # Copy from nimbix/image-common
 RUN apt-get -y update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install curl && \
-    curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh | bash
-
+    DEBIAN_FRONTEND=noninteractive apt-get -y install ca-certificates curl --no-install-recommends && \
+    curl -H 'Cache-Control: no-cache' \
+        https://raw.githubusercontent.com/nimbix/jarvice-desktop/master/install-nimbix.sh \
+        | bash
+	
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
 
