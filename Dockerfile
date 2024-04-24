@@ -33,14 +33,13 @@ EXPOSE 22
 WORKDIR /tmp/
 
 # Create a directory to compile SU2
-RUN mkdir -p /tmp/SU2/init
+RUN mkdir -p /tmp/SU2/
 
 # Ensure full access
-RUN chmod 0777 /tmp/SU2/init
+RUN chmod 0777 /tmp/SU2/
 
 # Add all source files to the newly created directory
-ADD init/init.sh /tmp/SU2/init/init.sh
-ADD init/compile_SU2.sh /tmp/SU2/init/compile_SU2.sh
+ADD ./ /tmp/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
