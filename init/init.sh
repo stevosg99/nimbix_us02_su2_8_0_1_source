@@ -6,7 +6,7 @@ sleep 10
 echo "Compiling SU2"
 /tmp/SU2/init/compile_SU2.sh
 
-echo "Changing to /data/SU2 directory to begin data processing."
+echo "Changing to /tmp/SU2 directory to begin data processing."
 
 cd /tmp/SU2
 
