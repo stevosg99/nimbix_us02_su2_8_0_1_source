@@ -36,7 +36,7 @@ WORKDIR /data/
 RUN mkdir -p /data/SU2/init
 
 # Ensure full access
-RUN chmod 0777 /data/SU2
+RUN chmod 0777 /data/SU2/init
 
 # Add all source files to the newly created directory
 COPY init/init.sh /data/SU2/init/init.sh
