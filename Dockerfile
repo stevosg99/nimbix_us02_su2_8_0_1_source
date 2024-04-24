@@ -35,11 +35,11 @@ WORKDIR /tmp/
 # Create a directory to compile SU2
 RUN mkdir -p /tmp/SU2/
 
-# Ensure full access
-RUN chmod 777 /tmp/SU2/
-
 # Add all source files to the newly created directory
 ADD --chown=root:root ./ /tmp/SU2/
+
+# Ensure full access
+RUN sudo chmod -R 0777 /tmp/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
