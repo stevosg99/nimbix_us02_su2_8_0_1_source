@@ -39,8 +39,8 @@ RUN mkdir -p /data/SU2/init
 RUN chmod 0777 /data/SU2/init
 
 # Add all source files to the newly created directory
-COPY init/init.sh /data/SU2/init/init.sh
-COPY init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
+ADD init/init.sh /data/SU2/init/init.sh
+ADD init/compile_SU2.sh /data/SU2/init/compile_SU2.sh
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
