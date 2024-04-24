@@ -41,7 +41,7 @@ RUN mkdir -p /tmp/SU2/
 ADD --chown=root:root ./ /tmp/SU2/
 
 # Ensure full access
-RUN sudo chmod -R 0777 /tmp/SU2/
+RUN chmod -R 0777 /tmp/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
