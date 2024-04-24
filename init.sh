@@ -8,10 +8,10 @@ bash $HOME/SU2/compile_SU2.sh
 
 echo "Changing to /data directory to begin data processing."
 
-cd /data
+# cd $HOME
 
 # Provide permission to run bash file in /data directory
-chmod -R a+rwx /data
+# chmod -R a=rwx $HOME
 
 # Get bash filename from session initialization
 while [[ -n "$1" ]]; do
