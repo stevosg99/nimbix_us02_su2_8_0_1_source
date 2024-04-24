@@ -4,7 +4,7 @@ sleep 10
 
 # Compile SU2 on the main node in the session
 echo "Compiling SU2"
-bash /tmp/SU2/init/compile_SU2.sh
+bash /tmp/SU2/compile_SU2.sh
 
 echo "Changing to /data directory to begin data processing."
 
