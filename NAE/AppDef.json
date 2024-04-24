@@ -19,7 +19,7 @@
     ],
     "commands": {
         "Batch": {
-            "path": "/tmp/SU2/init/init.sh",
+            "path": "/tmp/SU2/init.sh",
             "interactive": true,
             "name": "SU2 Batch",
             "description": "Run a batch command using /bin/bash.  Path must be specified within /data.",
