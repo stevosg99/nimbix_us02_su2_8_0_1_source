@@ -1,11 +1,10 @@
 #! /bin/bash
 
 # Ensure the current working directory
-mkdir -p /data/SU2
-initdir=/data/SU2
+initdir= $HOME/SU2
 cd $initdir
 git clone --branch v8.0.1 https://github.com/su2code/SU2.git
-wkdir=/data/SU2/SU2
+wkdir= $HOME/SU2/SU2
 cd $wkdir
 
 # Set the initial environmental variables
@@ -35,9 +34,9 @@ while [ "$build_counter" -le 3 ]; do
 	./meson.py build $flags --prefix=$initdir/install | tee -a build_log.txt
 
 	# Set environmental variables from meson build
-	export SU2_DATA=/data/SU2
-	export SU2_HOME=/data/SU2/SU2
-	export SU2_RUN=/data/SU2/SU2/bin
+	export SU2_DATA= $HOME/SU2
+	export SU2_HOME= $HOME/SU2/SU2
+	export SU2_RUN= $HOME/SU2/SU2/bin
 	export PATH=$PATH:$SU2_RUN
 	export PYTHONPATH=$PYTHONPATH:$SU2_RUN
 	# Set environmental variable to allow multi-node use
