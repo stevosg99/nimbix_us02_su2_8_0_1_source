@@ -36,7 +36,7 @@ WORKDIR /tmp/
 RUN mkdir -p /tmp/SU2/
 
 # Ensure full access
-RUN chmod 0777 /tmp/SU2/
+RUN chmod 777 /tmp/SU2/
 
 # Add all source files to the newly created directory
 ADD ./ /tmp/SU2/
@@ -45,6 +45,8 @@ ADD ./ /tmp/SU2/
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
+
+RUN chmod 777 /tmp/SU2/init/init.sh
 
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
 CMD "/tmp/SU2/init/init.sh"
