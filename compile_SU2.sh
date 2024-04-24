@@ -1,6 +1,7 @@
 #! /bin/bash
 
 # Ensure the current working directory
+mkdir /data/SU2
 initdir=/data/SU2
 cd $initdir
 git clone --branch v8.0.1 https://github.com/su2code/SU2.git
