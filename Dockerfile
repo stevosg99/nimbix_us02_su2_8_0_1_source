@@ -39,7 +39,7 @@ RUN mkdir -p /tmp/SU2/
 RUN chmod 777 /tmp/SU2/
 
 # Add all source files to the newly created directory
-ADD ./ /tmp/SU2/
+ADD --chown=root:root ./ /tmp/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
