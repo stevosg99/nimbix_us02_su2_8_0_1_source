@@ -32,16 +32,16 @@ RUN apt-get -y update && \
 EXPOSE 22
 
 # Change working directory
-WORKDIR /tmp/
+WORKDIR $HOME/
 
 # Create a directory to compile SU2
-RUN mkdir -p /tmp/SU2/
+RUN mkdir -p $HOME/SU2/
 
 # Add all source files to the newly created directory
-ADD --chown=root:root ./ /tmp/SU2/
+ADD --chown=root:root ./ $HOME/SU2/
 
 # Ensure full access
-RUN chmod -R 0777 /tmp/SU2/
+RUN chmod -R a+rwx $HOME/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
@@ -49,4 +49,4 @@ COPY NAE/SU2logo.png /etc/NAE/SU2logo.png
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 
 # Call init.sh to compile and install SU2, verify all nodes are active, and begin solving
-CMD "/tmp/SU2/init.sh"
+CMD "$HOME/SU2/init.sh"
