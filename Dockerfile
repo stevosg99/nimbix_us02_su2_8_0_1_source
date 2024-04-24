@@ -41,7 +41,7 @@ RUN mkdir -p $HOME/SU2/
 ADD --chown=root:root ./ $HOME/SU2/
 
 # Ensure full access
-RUN chmod -R a+rwx $HOME/SU2/
+RUN chmod -R a=rwx $HOME/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
