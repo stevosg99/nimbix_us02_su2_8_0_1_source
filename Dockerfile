@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 ENV LANG C.UTF-8
 LABEL maintainer="Stephen Graham" \
       license="GNU LGPL 2.1"
