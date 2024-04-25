@@ -31,7 +31,7 @@ while [ "$build_counter" -le 3 ]; do
 	
 	# Compile with meson
 	# (note that meson adds 'bin' to the --prefix directory during build)
-	./meson.py build $flags --prefix=$initdir | tee -a build_log.txt
+	./meson.py build $flags --prefix=$wkdir | tee -a build_log.txt
 
 	# Set environmental variables from meson build
 	export SU2_DATA=/opt/SU2
