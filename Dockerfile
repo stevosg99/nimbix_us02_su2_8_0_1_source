@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM ubuntu:22.04
 ENV LANG C.UTF-8
 LABEL maintainer="Stephen Graham" \
@@ -32,16 +34,16 @@ RUN apt-get -y update && \
 EXPOSE 22
 
 # Change working directory
-WORKDIR $HOME/data/
+# WORKDIR $HOME
 
 # Create a directory to compile SU2
 RUN mkdir $HOME/data/SU2/
 
 # Add all source files to the newly created directory
-ADD init.sh $HOME/data/SU2/
+ADD . $HOME/data/SU2/
 
 # Ensure full access
-RUN chmod -R a=rwx $HOME/data
+RUN chmod -R 0777 $HOME/data/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
