@@ -38,10 +38,10 @@ WORKDIR $HOME/data/
 RUN mkdir $HOME/data/SU2/
 
 # Add all source files to the newly created directory
-ADD ./init.sh $HOME/data/SU2/
+ADD init.sh $HOME/data/SU2/
 
 # Ensure full access
-RUN sudo chmod -R a=rwx $HOME/data/SU2/
+RUN sudo chmod -R a=rwx $HOME/data
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
