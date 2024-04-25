@@ -4,8 +4,8 @@ sleep 10
 
 # Compile SU2 on the main node in the session
 echo "Compiling SU2"
-cd /data/SU2/
-bash /data/SU2/compile_SU2.sh
+cd /opt/SU2/
+bash /opt/SU2/compile_SU2.sh
 
 echo "Changing to /data directory to begin data processing."
 
@@ -22,3 +22,5 @@ done
 
 # Call the bash file
 source "$BASH_FILE"
+cd $(dirname $BASH_FILE)
+chmod +x "$BASH_FILE" 
