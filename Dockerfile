@@ -40,7 +40,8 @@ WORKDIR /opt/
 RUN mkdir /opt/SU2/
 
 # Add all source files to the newly created directory
-ADD ./ /opt/SU2/
+ADD init.sh /opt/
+ADD compile_SU2.sh /opt/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
