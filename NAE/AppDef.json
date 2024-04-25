@@ -20,7 +20,7 @@
     ],
     "commands": {
         "Batch": {
-            "path": "/home/nimbix/data/init.sh",
+            "path": "/data/init.sh",
 	    "interactive": true,
             "name": "SU2 Batch",
             "description": "Run a batch command using /bin/bash.  Path must be specified within /data.",
