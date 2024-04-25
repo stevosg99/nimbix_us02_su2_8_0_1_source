@@ -42,7 +42,7 @@ ADD init.sh $HOME/SU2/
 ADD compile_SU2.sh $HOME/SU2/
 
 # Ensure full access
-RUN chmod -R a=rwx $HOME/SU2/
+RUN sudo chmod -R a=rwx $HOME/SU2/
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
