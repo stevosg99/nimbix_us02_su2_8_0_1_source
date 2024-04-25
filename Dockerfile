@@ -41,7 +41,7 @@ RUN mkdir $HOME/data/SU2/
 ADD init.sh $HOME/data/SU2/
 
 # Ensure full access
-RUN sudo chmod -R a=rwx $HOME/data
+RUN chmod -R a=rwx $HOME/data
 
 # Save Nimbix AppDef
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
