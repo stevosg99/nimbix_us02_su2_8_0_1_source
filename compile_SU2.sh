@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Ensure the current working directory
-initdir=/opt/SU2/
+initdir=/opt/SU2
 cd $initdir
 git clone --branch v8.0.1 https://github.com/su2code/SU2.git
 wkdir=/opt/SU2/SU2
@@ -31,10 +31,10 @@ while [ "$build_counter" -le 3 ]; do
 	
 	# Compile with meson
 	# (note that meson adds 'bin' to the --prefix directory during build)
-	./meson.py build $flags --prefix=$initdir/install | tee -a build_log.txt
+	./meson.py build $flags --prefix=$initdir | tee -a build_log.txt
 
 	# Set environmental variables from meson build
-	export SU2_DATA=/opt/SU2/
+	export SU2_DATA=/opt/SU2
 	export SU2_HOME=/opt/SU2/SU2
 	export SU2_RUN=/opt/SU2/SU2/bin
 	export PATH=$PATH:$SU2_RUN
