@@ -20,7 +20,7 @@
     ],
     "commands": {
         "Batch": {
-            "path": "$HOME/SU2/init.sh",
+            "path": "$HOME/data/SU2/init.sh",
 	    "interactive": false,
             "name": "SU2 Batch",
             "description": "Run a batch command using /bin/bash.  Path must be specified within /data.",
